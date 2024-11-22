@@ -1,8 +1,10 @@
-
-
-.datacell{
-    text-align: center;   
-    background-color: aquamarine;
+.datacell{    
     height: 5em;
-    font-size: 25px;
+    margin: 20px;
+}
+
+#submit-btn{
+    background-color: rgb(34, 75, 255);
+    border-color:  rgb(34, 75, 255);
+    color: white;
 }

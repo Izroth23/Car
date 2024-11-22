@@ -6,68 +6,340 @@
         <title>CAR</title>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="styles.css">
+        <style>
+            #main-header{
+                text-align: center;
+                color: rgb(51, 51, 51);
+                font-weight: lighter;
+            }
+        </style>
     </head>
     <body>
-        <div class="container">
-            <div class="row">
+        <h1 id="main-header">Car</h1>
+        <form>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="datacell">
+                            <div>
+                                <label for="brand">Car Name</label>
+                                <select class="form-select" id="brand" required>
+                                    <option value="toyota">Toyota</option>
+                                    <option value="volkswagen">Volkswagen</option>
+                                    <option value="honda">Honda</option>
+                                    <option value="ford">Ford</option>
+                                    <option value="bmw">BMW</option>
+                                    <option value="mercedes-benz">Mercedes-Benz</option>
+                                    <option value="chevrolet">Chevrolet</option>
+                                    <option value="audi">Audi</option>
+                                    <option value="nissan">Nissan</option>
+                                    <option value="hyundai">Hyundai</option>
+                                    <option value="kia">Kia</option>
+                                    <option value="porsche">Porsche</option>
+                                    <option value="subaru">Subaru</option>
+                                    <option value="jaguar">Jaguar</option>
+                                    <option value="mazda">Mazda</option>
+                                    <option value="tesla">Tesla</option>
+                                    <option value="ferrari">Ferrari</option>
+                                    <option value="lexus">Lexus</option>
+                                    <option value="land-rover">Land Rover</option>
+                                    <option value="mitsubishi">Mitsubishi</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="col">
-                    <div class="form-floating" class="datacell">
-                        <input type="text" id="brand" class="form-control" placeholder="Enter the brand here">
-                        <label for="brand" class="form-label">Brand</label>
+                    <div class="col">
+                        <div id="model" class="datacell">
+                            <div class="form-floating">                                
+                                <input  required list="models" name="model" id="model" class="form-control" placeholder="Enter or choose model">
+                                <label for="model">Model</label>
+                                <datalist id="models">
+                                    <option>Acura MDX</option>
+                                    <option>Alfa Romeo Giulia</option>
+                                    <option>Audi A4</option>
+                                    <option>BMW 3 Series</option>
+                                    <option>Chevrolet Silverado</option>
+                                    <option>Chrysler Pacifica</option>
+                                    <option>Dodge Charger</option>
+                                    <option>Ferrari 488 GTB</option>
+                                    <option>Ford Mustang</option>
+                                    <option>Honda Accord</option>
+                                    <option>Hyundai Elantra</option>
+                                    <option>Infiniti QX50</option>
+                                    <option>Jaguar F-Type</option>
+                                    <option>Jeep Wrangler</option>
+                                    <option>Kia Sorento</option>
+                                    <option>Lamborghini Huracán</option>
+                                    <option>Land Rover Range Rover</option>
+                                    <option>Lexus RX</option>
+                                    <option>Lincoln Navigator</option>
+                                    <option>Maserati Levante</option>
+                                    <option>Mazda CX-5</option>
+                                    <option>McLaren 720S</option>
+                                    <option>Mercedes-Benz C-Class</option>
+                                    <option>Mini Cooper</option>
+                                    <option>Nissan Altima</option>
+                                    <option>Porsche 911</option>
+                                    <option>Ram 1500</option>
+                                    <option>Renault Clio</option>
+                                    <option>Rolls-Royce Phantom</option>
+                                    <option>Subaru Outback</option>
+                                    <option>Tesla Model 3</option>
+                                    <option>Toyota Corolla</option>
+                                    <option>Volkswagen Golf</option>
+                                    <option>Volvo XC90</option>
+                                    <option>Audi Q5</option>
+                                    <option>BMW X5</option>
+                                    <option>Chevrolet Malibu</option>
+                                    <option>Ford F-150</option>
+                                    <option>Honda CR-V</option>
+                                    <option>Hyundai Tucson</option>
+                                    <option>Lexus IS</option>
+                                    <option>Mazda 3</option>
+                                    <option>Nissan Rogue</option>
+                                    <option>Porsche Cayenne</option>
+                                    <option>Range Rover Sport</option>
+                                    <option>Toyota RAV4</option>
+                                    <option>Volkswagen Jetta</option>
+                                    <option>BMW M3</option>
+                                    <option>Chevrolet Camaro</option>
+                                    <option>Dodge Durango</option>
+                                    <option>Fiat 500</option>
+                                    <option>Ford Explorer</option>
+                                    <option>Honda Civic</option>
+                                    <option>Hyundai Sonata</option>
+                                    <option>Jaguar XJ</option>
+                                    <option>Kia Optima</option>
+                                    <option>Lexus NX</option>
+                                    <option>Lincoln MKZ</option>
+                                    <option>Mitsubishi Outlander</option>
+                                    <option>Nissan Sentra</option>
+                                    <option>Peugeot 208</option>
+                                    <option>Porsche Taycan</option>
+                                    <option>Ram 2500</option>
+                                    <option>Saab 9-3</option>
+                                    <option>Subaru Impreza</option>
+                                    <option>Toyota Sienna</option>
+                                    <option>Tesla Model S</option>
+                                    <option>Volkswagen Passat</option>
+                                    <option>Audi A6</option>
+                                    <option>BMW 5 Series</option>
+                                    <option>Chevrolet Equinox</option>
+                                    <option>Chrysler 300</option>
+                                    <option>Dodge Ram</option>
+                                    <option>Ferrari LaFerrari</option>
+                                    <option>Ford Escape</option>
+                                    <option>GMC Sierra</option>
+                                    <option>Honda Fit</option>
+                                    <option>Hyundai Palisade</option>
+                                    <option>Infiniti Q50</option>
+                                    <option>Jeep Grand Cherokee</option>
+                                    <option>Kia Forte</option>
+                                    <option>Lamborghini Aventador</option>
+                                    <option>Land Rover Discovery</option>
+                                    <option>Mazda MX-5 Miata</option>
+                                    <option>Mercedes-Benz GLC</option>
+                                    <option>Mini Countryman</option>
+                                    <option>Mitsubishi Eclipse Cross</option>
+                                    <option>Nissan Frontier</option>
+                                    <option>Peugeot 3008</option>
+                                    <option>Porsche 718 Cayman</option>
+                                    <option>Renault Megane</option>
+                                    <option>Subaru Legacy</option>
+                                    <option>Toyota Highlander</option>
+                                    <option>Volkswagen Tiguan</option>
+                                    <option>Volvo S60</option>
+                                    <option>BMW X3</option>
+                                    <option>Chevrolet Traverse</option>
+                                    <option>Dodge Challenger</option>
+                                    <option>Ford Ranger</option>
+                                    <option>Hyundai Santa Fe</option>                                    
+                                </datalist>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="datacell">
+                            <div class="input-group">
+                                <div class="input-group-text">$</div>
+                                <div class="form-floating">
+                                    <input required type="number" name="" id="price" class="form-control" placeholder="Enter Price">
+                                    <label for="price">Price</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <div id="model" class="datacell">Model - datafield</div>
+                <div class="row">
+                    <div class="col">
+                        <div id="year" class="datacell">
+                            <div class="form-floating">
+                                <input required type="number" name="" id="year" class="form-control" placeholder="Enter the year here">
+                                <label for="year">Year of Manufacture</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="datacell">
+                            <div>
+                                <label for="mileage" class="form-label">Mileage in km</label><br>
+                                <input required type="range" id="mileage" class="form-range" placeholder="Enter mileage here">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2" required>
+                        <div id="color" class="datacell">
+                            <div>
+                                <label for="color">Color</label>    
+                                <input type="color" id="color" placeholder="Select the color" class="form-control form-control-color">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col">
-                    <div id="year" class="datacell">Year of manufacture - date</div>
+                <div class="row">
+                    <div class="col">
+                        <label for="fuel-type" id="fuel-label">Fuel Type</label>
+                        <div required id="fuel-type" class="datacell">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="fuel" id="option1"><label for="option1">Petrol</label>
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="fuel" id="option2"><label for="option2">Diesel</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="fuel" id="option3"><label for="option3">Electricity</label>
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="fuel" id="option4"><label for="option4">Hybrid</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="fuel" id="option5"><label for="option5">PHEV</label>
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="fuel" id="option6"><label for="option6">Hydrogen</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="fuel" id="option7"><label for="option7">CNG</label>
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="fuel" id="option8"><label for="option8">LPG</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="fuel" id="option9"><label for="option9">Ethanol</label>
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="fuel" id="option10"><label for="option10">Solar Energy</label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>                                  
+                        </div>
+                    </div>
+        
+                    <div class="col">
+                        <label for="features" id="features-label">Features</label>
+                        <div required id="features" class="datacell">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="choice1" class="form-check-input">
+                                            <label for="choice1" class="form-check-label">Advanced Safety features</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="choice2" class="form-check-input">
+                                            <label for="choice2" class="form-check-label">Infotainment Systems</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="choice3" class="form-check-input">
+                                            <label for="choice3" class="form-check-label">Fuel Efficiency</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="choice4" class="form-check-input">
+                                            <label for="choice4" class="form-check-label">Comfort Features</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="choice5" class="form-check-input">
+                                            <label for="choice5" class="form-check-label">Driver Assistance Technology</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="choice6" class="form-check-input">
+                                            <label for="choice6" class="form-check-label">All-Wheel Drive</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="choice7" class="form-check-input">
+                                            <label for="choice7" class="form-check-label">Wireless Connectivity</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="choice8" class="form-check-input">
+                                            <label for="choice8" class="form-check-label">Customizable Driving Mode</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="choice9" class="form-check-input">
+                                            <label for="choice9" class="form-check-label">Panoramic Sunroofs</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" id="choice10" class="form-check-input" />
+                                            <label for="choice10" class="form-check-label">Connectivity and Smart Features</label>
+                                        </div>
+                                    </td>
+                                </tr>                                                                
+                            </table>                            
+                        </div>
+                    </div>         
                 </div>
-            </div>
-
-            <div class="row">
-
-                <div class="col">
-                    <div id="mileage" class="datacell">Mileage - range</div>
-                </div>
-
-                <div class="col">
-                    <div id="color" class="datacell">Color - color</div>
-                </div>
-
-                <div class="col">
-                    <div id="date" class="datacell">Date of purchase - date</div>
-                </div>  
-            </div>
-
-            <div class="row">
-
-                <div class="col">
-                    <div id="car-image" class="datacell">Upload car image - file</div>
-                </div>
-
-                <div class="col">
-                    <div id="email-address" class="datacell">Owner's email address - email</div>
-                </div>
-
-                <div class="col">
-                    <div id="contact-number" class="datacell">Owner's contact number - tel</div>
-                </div>                
-            </div>
-
-            <div class="row">
                 
-                <div class="col">
-                    <div id="fuel" class="datacell">Fuel Type - radio</div>
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" name="" id="">
+                    </div>
                 </div>
-                    
-                <div class="col">
-                    <div id="features" class="datacell">Features - checkbox</div>
-                </div>         
             </div>
-        </div>
+        </form>
         <script src="js/bootstrap.js"></script>
     </body>
 </html> 
