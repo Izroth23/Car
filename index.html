@@ -5,17 +5,69 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CAR</title>
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div class="container">
-            <form action="index.php" method="post">
-                <div class="form-floating">
-                    <input type="text" id="model" class="form-control" placeholder="Enter the model">
-                    <label for="model" class="form-label">Model</label>
+            <div class="row">
+
+                <div class="col">
+                    <div class="form-floating" class="datacell">
+                        <input type="text" id="brand" class="form-control" placeholder="Enter the brand here">
+                        <label for="brand" class="form-label">Brand</label>
+                    </div>
                 </div>
-            </form>
+
+                <div class="col">
+                    <div id="model" class="datacell">Model - datafield</div>
+                </div>
+
+                <div class="col">
+                    <div id="year" class="datacell">Year of manufacture - date</div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col">
+                    <div id="mileage" class="datacell">Mileage - range</div>
+                </div>
+
+                <div class="col">
+                    <div id="color" class="datacell">Color - color</div>
+                </div>
+
+                <div class="col">
+                    <div id="date" class="datacell">Date of purchase - date</div>
+                </div>  
+            </div>
+
+            <div class="row">
+
+                <div class="col">
+                    <div id="car-image" class="datacell">Upload car image - file</div>
+                </div>
+
+                <div class="col">
+                    <div id="email-address" class="datacell">Owner's email address - email</div>
+                </div>
+
+                <div class="col">
+                    <div id="contact-number" class="datacell">Owner's contact number - tel</div>
+                </div>                
+            </div>
+
+            <div class="row">
+                
+                <div class="col">
+                    <div id="fuel" class="datacell">Fuel Type - radio</div>
+                </div>
+                    
+                <div class="col">
+                    <div id="features" class="datacell">Features - checkbox</div>
+                </div>         
+            </div>
         </div>
-        
         <script src="js/bootstrap.js"></script>
     </body>
-</html>
+</html> 
