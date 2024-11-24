@@ -18,12 +18,14 @@
         <h1 id="main-header">Car</h1>
         <form>
             <div class="container">
+                <input type="submit" name="" id="" class="btn btn-primary btn-lg">
                 <div class="row">
                     <div class="col">
                         <div class="datacell">
                             <div>
                                 <label for="brand">Car Name</label>
                                 <select class="form-select" id="brand" required>
+                                    <option value="select">Select Car Name</option>
                                     <option value="toyota">Toyota</option>
                                     <option value="volkswagen">Volkswagen</option>
                                     <option value="honda">Honda</option>
@@ -166,8 +168,8 @@
                             <div class="input-group">
                                 <div class="input-group-text">$</div>
                                 <div class="form-floating">
-                                    <input required type="number" name="" id="price" class="form-control" placeholder="Enter Price">
-                                    <label for="price">Price</label>
+                                    <input required min="0" type="number" name="" id="price" class="form-control" placeholder="Enter Price">
+                                    <label for="price">Price</label>    
                                 </div>
                             </div>
                         </div>
@@ -180,15 +182,16 @@
                             <div class="form-floating">
                                 <input required type="number" name="" id="year" class="form-control" placeholder="Enter the year here">
                                 <label for="year">Year of Manufacture</label>
-                            </div>
+                            </div>  
                         </div>
                     </div>
 
                     <div class="col-6">
                         <div class="datacell">
                             <div>
-                                <label for="mileage" class="form-label">Mileage in km</label><br>
-                                <input required type="range" id="mileage" class="form-range" placeholder="Enter mileage here">
+                                <label for="mileage" class="form-label">Mileage in km</label>
+                                <input required value="0" min="0" max="500000" step="1000" onchange="updateMileage(this.value)" type="range" id="mileage" class="form-range" placeholder="Enter mileage here">
+                                <div style="text-align: center;" id="mileage-value">0km</div>
                             </div>
                         </div>
                     </div>
@@ -204,142 +207,172 @@
                 </div>
 
                 <div class="row">
-                    <div class="col">
-                        <label for="fuel-type" id="fuel-label">Fuel Type</label>
+                    <div class="col-5">
                         <div required id="fuel-type" class="datacell">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="radio" name="fuel" id="option1"><label for="option1">Petrol</label>
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="fuel" id="option2"><label for="option2">Diesel</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="radio" name="fuel" id="option3"><label for="option3">Electricity</label>
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="fuel" id="option4"><label for="option4">Hybrid</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="radio" name="fuel" id="option5"><label for="option5">PHEV</label>
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="fuel" id="option6"><label for="option6">Hydrogen</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="radio" name="fuel" id="option7"><label for="option7">CNG</label>
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="fuel" id="option8"><label for="option8">LPG</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="radio" name="fuel" id="option9"><label for="option9">Ethanol</label>
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="fuel" id="option10"><label for="option10">Solar Energy</label>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>                                  
+                            <fieldset class="border border-primary rounded p-3">
+                                <legend class="w-auto text-primary px-2">Fuel Type</legend>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fuel" id="option1">
+                                                    <label class="form-check-label" for="option1">Petrol</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fuel" id="option2">
+                                                    <label class="form-check-label" for="option2">Diesel</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fuel" id="option3">
+                                                    <label class="form-check-label" for="option3">Electricity</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fuel" id="option4">
+                                                    <label class="form-check-label" for="option4">Hybrid</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fuel" id="option5">
+                                                    <label class="form-check-label" for="option5">PHEV</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fuel" id="option6">
+                                                    <label class="form-check-label" for="option6">Hydrogen</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fuel" id="option7">
+                                                    <label class="form-check-label" for="option7">CNG</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fuel" id="option8">
+                                                    <label class="form-check-label" for="option8">LPG</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fuel" id="option9">
+                                                    <label class="form-check-label" for="option9">Ethanol</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="fuel" id="option10">
+                                                    <label class="form-check-label" for="option10">Solar Energy</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>                                                     
                         </div>
                     </div>
         
                     <div class="col">
-                        <label for="features" id="features-label">Features</label>
                         <div required id="features" class="datacell">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-switch">
-                                            <input type="checkbox" id="choice1" class="form-check-input">
-                                            <label for="choice1" class="form-check-label">Advanced Safety features</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-check form-switch">
-                                            <input type="checkbox" id="choice2" class="form-check-input">
-                                            <label for="choice2" class="form-check-label">Infotainment Systems</label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-switch">
-                                            <input type="checkbox" id="choice3" class="form-check-input">
-                                            <label for="choice3" class="form-check-label">Fuel Efficiency</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-check form-switch">
-                                            <input type="checkbox" id="choice4" class="form-check-input">
-                                            <label for="choice4" class="form-check-label">Comfort Features</label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-switch">
-                                            <input type="checkbox" id="choice5" class="form-check-input">
-                                            <label for="choice5" class="form-check-label">Driver Assistance Technology</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-check form-switch">
-                                            <input type="checkbox" id="choice6" class="form-check-input">
-                                            <label for="choice6" class="form-check-label">All-Wheel Drive</label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-switch">
-                                            <input type="checkbox" id="choice7" class="form-check-input">
-                                            <label for="choice7" class="form-check-label">Wireless Connectivity</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-check form-switch">
-                                            <input type="checkbox" id="choice8" class="form-check-input">
-                                            <label for="choice8" class="form-check-label">Customizable Driving Mode</label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-switch">
-                                            <input type="checkbox" id="choice9" class="form-check-input">
-                                            <label for="choice9" class="form-check-label">Panoramic Sunroofs</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-check form-switch">
-                                            <input type="checkbox" id="choice10" class="form-check-input" />
-                                            <label for="choice10" class="form-check-label">Connectivity and Smart Features</label>
-                                        </div>
-                                    </td>
-                                </tr>                                                                
-                            </table>                            
+                            <fieldset class="border border-primary rounded p-3">
+                                <legend class="w-auto text-primary px-2">Features</legend>
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input type="checkbox" id="choice1" class="form-check-input">
+                                                <label for="choice1" class="form-check-label">Advanced Safety features</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input type="checkbox" id="choice2" class="form-check-input">
+                                                <label for="choice2" class="form-check-label">Infotainment Systems</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input type="checkbox" id="choice3" class="form-check-input">
+                                                <label for="choice3" class="form-check-label">Fuel Efficiency</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input type="checkbox" id="choice4" class="form-check-input">
+                                                <label for="choice4" class="form-check-label">Comfort Features</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input type="checkbox" id="choice5" class="form-check-input">
+                                                <label for="choice5" class="form-check-label">Driver Assistance Technology</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input type="checkbox" id="choice6" class="form-check-input">
+                                                <label for="choice6" class="form-check-label">All-Wheel Drive</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input type="checkbox" id="choice7" class="form-check-input">
+                                                <label for="choice7" class="form-check-label">Wireless Connectivity</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input type="checkbox" id="choice8" class="form-check-input">
+                                                <label for="choice8" class="form-check-label">Customizable Driving Mode</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input type="checkbox" id="choice9" class="form-check-input">
+                                                <label for="choice9" class="form-check-label">Panoramic Sunroofs</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input type="checkbox" id="choice10" class="form-check-input" />
+                                                <label for="choice10" class="form-check-label">Connectivity and Smart Features</label>
+                                            </div>
+                                        </td>
+                                    </tr>                                                                
+                                </table>                            
+                            </fieldset>
                         </div>
                     </div>         
                 </div>
-                
-                <div class="row">
-                    <div class="col">
-                        <input type="submit" name="" id="">
-                    </div>
                 </div>
             </div>
         </form>
+        <script src="script.js"></script>
         <script src="js/bootstrap.js"></script>
     </body>
 </html> 
