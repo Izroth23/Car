@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CAR</title>
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/styles.css">
         <style>
             #main-header{
                 text-align: center;
@@ -16,37 +16,15 @@
     </head>
     <body>
         <h1 id="main-header">Car</h1>
-        <form>
-            <div class="container">
-                <input type="submit" name="" id="" class="btn btn-primary btn-lg">
+        <form id="carForm" class="needs-validation" novalidate>
+            <div class="container">    
                 <div class="row">
                     <div class="col">
                         <div class="datacell">
-                            <div>
-                                <label for="brand">Car Name</label>
-                                <select class="form-select" id="brand" required>
-                                    <option value="select">Select Car Name</option>
-                                    <option value="toyota">Toyota</option>
-                                    <option value="volkswagen">Volkswagen</option>
-                                    <option value="honda">Honda</option>
-                                    <option value="ford">Ford</option>
-                                    <option value="bmw">BMW</option>
-                                    <option value="mercedes-benz">Mercedes-Benz</option>
-                                    <option value="chevrolet">Chevrolet</option>
-                                    <option value="audi">Audi</option>
-                                    <option value="nissan">Nissan</option>
-                                    <option value="hyundai">Hyundai</option>
-                                    <option value="kia">Kia</option>
-                                    <option value="porsche">Porsche</option>
-                                    <option value="subaru">Subaru</option>
-                                    <option value="jaguar">Jaguar</option>
-                                    <option value="mazda">Mazda</option>
-                                    <option value="tesla">Tesla</option>
-                                    <option value="ferrari">Ferrari</option>
-                                    <option value="lexus">Lexus</option>
-                                    <option value="land-rover">Land Rover</option>
-                                    <option value="mitsubishi">Mitsubishi</option>
-                                </select>
+                            <div class="form-floating">
+                                <input class="form-control" type="text" name="" id="brand" placeholder="1" required>
+                                <label for="brand" class="form-label">Car Name</label>
+                                <div class="invalid-feedback">Car name is required</div>
                             </div>
                         </div>
                     </div>
@@ -54,7 +32,7 @@
                     <div class="col">
                         <div id="model" class="datacell">
                             <div class="form-floating">                                
-                                <input  required list="models" name="model" id="model" class="form-control" placeholder="Enter or choose model">
+                                <input required list="models" name="model" id="model" class="form-control" placeholder="Enter or choose model">
                                 <label for="model">Model</label>
                                 <datalist id="models">
                                     <option>Acura MDX</option>
@@ -158,6 +136,7 @@
                                     <option>Ford Ranger</option>
                                     <option>Hyundai Santa Fe</option>                                    
                                 </datalist>
+                                <div class="invalid-feedback">Model of the car is required</div>
                             </div>
                             
                         </div>
@@ -169,7 +148,8 @@
                                 <div class="input-group-text">$</div>
                                 <div class="form-floating">
                                     <input required min="0" type="number" name="" id="price" class="form-control" placeholder="Enter Price">
-                                    <label for="price">Price</label>    
+                                    <label for="price">Price</label>  
+                                    <div class="invalid-feedback">Please input a price</div>  
                                 </div>
                             </div>
                         </div>
@@ -182,6 +162,7 @@
                             <div class="form-floating">
                                 <input required type="number" name="" id="year" class="form-control" placeholder="Enter the year here">
                                 <label for="year">Year of Manufacture</label>
+                                <div class="invalid-feedback">Please input the year of manufacture</div>
                             </div>  
                         </div>
                     </div>
@@ -189,9 +170,12 @@
                     <div class="col-6">
                         <div class="datacell">
                             <div>
-                                <label for="mileage" class="form-label">Mileage in km</label>
-                                <input required value="0" min="0" max="500000" step="1000" onchange="updateMileage(this.value)" type="range" id="mileage" class="form-range" placeholder="Enter mileage here">
-                                <div style="text-align: center;" id="mileage-value">0km</div>
+                                <label for="mileage" class="form-label" id="mileage-value">Mileage: 0km</label>
+                                <div class="position-relative">
+                                    <input required value="0" min="0" max="500000" step="1000" onchange="updateMileage(this.value)" 
+                                           type="range" id="mileage" class="form-range" placeholder="Enter mileage here">
+                                    <div class="invalid-feedback" id="mileage-error">You forgot the mileage</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -205,13 +189,14 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div class="container"> 
                 <div class="row">
                     <div class="col-5">
                         <div required id="fuel-type" class="datacell">
-                            <fieldset class="border border-primary rounded p-3">
+                            <fieldset required class="border border-primary rounded p-3">
                                 <legend class="w-auto text-primary px-2">Fuel Type</legend>
-                                <table class="table">
+                                <table class="table table-striped">
                                     <tbody>
                                         <tr>
                                             <td>
@@ -293,7 +278,7 @@
                         <div required id="features" class="datacell">
                             <fieldset class="border border-primary rounded p-3">
                                 <legend class="w-auto text-primary px-2">Features</legend>
-                                <table class="table">
+                                <table class="table table-striped">
                                     <tr>
                                         <td>
                                             <div class="form-check form-switch">
@@ -370,9 +355,12 @@
                     </div>         
                 </div>
                 </div>
-            </div>
+                
+                <input type="submit" name="" id="" class="btn btn-primary btn-lg">
+            </div>            
         </form>
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
         <script src="js/bootstrap.js"></script>
+        <script src="js/form.js"></script>
     </body>
 </html> 
